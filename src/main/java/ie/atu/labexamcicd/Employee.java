@@ -10,15 +10,14 @@ import java.util.Date;
 @AllArgsConstructor
 @Data
 public class Employee {
-    //@Pattern()
     public String employeeCode;
-    //@Size(max = 100)
+    @Size(max = 100)
     public String name;
-    //@Email
+    @Email
     public String email;
     public String position;
-   // @Positive
+    @Positive
     public Double salary;
-    //@PastOrPresent
+    @PastOrPresent
     public Date date;
 }

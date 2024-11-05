@@ -1,9 +1,6 @@
 package ie.atu.labexamcicd;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +22,17 @@ public class EmployeeController {
         employeeService.addEmployee(employee);
         return employeeService.getEmployeeList();
     }
+
+    @PutMapping("/updateEmployee")
+    public  List<Employee> updateEmployee(@RequestBody Employee employee){
+        return employeeService.getEmployeeList();
+    }
+
+    @DeleteMapping("/deleteEmployee/{id}")
+    public List<Employee> deleteEmployee(@PathVariable String id){
+        employeeService.deleteEmployee(id);
+        return employeeService.getEmployeeList();
+    }
+
 
 }
